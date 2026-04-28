@@ -118,35 +118,43 @@ export const Contact = () => {
               >
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Name</label>
+                    <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Name</label>
                     <input
                       {...register('name')}
+                      id="contact-name"
                       type="text"
+                      autoComplete="name"
+                      aria-describedby={errors.name ? 'contact-name-error' : undefined}
                       className={`w-full bg-surface-container-highest/50 border ${errors.name ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
                       placeholder="John Doe"
                     />
-                    {errors.name && <p className="text-[10px] text-error font-bold uppercase">{errors.name.message}</p>}
+                    {errors.name && <p id="contact-name-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.name.message}</p>}
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email</label>
+                    <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email</label>
                     <input
                       {...register('email')}
+                      id="contact-email"
                       type="email"
+                      autoComplete="email"
+                      aria-describedby={errors.email ? 'contact-email-error' : undefined}
                       className={`w-full bg-surface-container-highest/50 border ${errors.email ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
                       placeholder="john@example.com"
                     />
-                    {errors.email && <p className="text-[10px] text-error font-bold uppercase">{errors.email.message}</p>}
+                    {errors.email && <p id="contact-email-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.email.message}</p>}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Message</label>
+                  <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Message</label>
                   <textarea
                     {...register('message')}
+                    id="contact-message"
                     rows={4}
+                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
                     className={`w-full bg-surface-container-highest/50 border ${errors.message ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors resize-none text-sm`}
                     placeholder="Tell me about your project..."
                   />
-                  {errors.message && <p className="text-[10px] text-error font-bold uppercase">{errors.message.message}</p>}
+                  {errors.message && <p id="contact-message-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.message.message}</p>}
                 </div>
                 
                 {isError && (

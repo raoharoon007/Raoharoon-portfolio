@@ -52,9 +52,10 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Back to top"
             className="fixed bottom-8 right-8 z-40 p-4 bg-primary text-on-primary rounded-full shadow-lg hover:bg-primary-container transition-colors"
           >
-            <ArrowUp className="w-6 h-6" />
+            <ArrowUp className="w-6 h-6" aria-hidden="true" />
           </motion.button>
         )}
       </AnimatePresence>

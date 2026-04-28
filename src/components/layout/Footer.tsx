@@ -15,14 +15,14 @@ export const Footer = () => {
 
         <div className="flex flex-col items-center md:items-end gap-6">
           <div className="flex gap-6">
-            <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors">
-              <Github className="w-6 h-6" />
+            <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-on-surface-variant hover:text-primary transition-colors">
+              <Github className="w-6 h-6" aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors">
-              <Linkedin className="w-6 h-6" />
+            <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-on-surface-variant hover:text-primary transition-colors">
+              <Linkedin className="w-6 h-6" aria-hidden="true" />
             </a>
-            <a href="mailto:raoharoon007@gmail.com" className="text-on-surface-variant hover:text-primary transition-colors">
-              <Mail className="w-6 h-6" />
+            <a href="mailto:raoharoon007@gmail.com" aria-label="Send email" className="text-on-surface-variant hover:text-primary transition-colors">
+              <Mail className="w-6 h-6" aria-hidden="true" />
             </a>
           </div>
           <p className="text-sm text-on-surface-variant/60">

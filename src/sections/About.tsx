@@ -23,7 +23,7 @@ export const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h4 className="text-primary font-headline font-bold text-3xl">1+</h4>
+              <p className="text-primary font-headline font-bold text-3xl">1+</p>
               <p className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Years Experience</p>
             </motion.div>
             <motion.div
@@ -32,7 +32,7 @@ export const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <h4 className="text-secondary font-headline font-bold text-3xl">5+</h4>
+              <p className="text-secondary font-headline font-bold text-3xl">5+</p>
               <p className="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Projects Delivered</p>
             </motion.div>
           </div>
@@ -43,7 +43,12 @@ export const About = () => {
           <div className="absolute inset-0 bg-surface-container-highest rounded-2xl overflow-hidden glass-panel">
             <img
               src="/images/me.png"
-              alt="Rao Muhammad Haroon"
+              alt="Rao Muhammad Haroon - Front End Developer"
+              width={600}
+              height={600}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
             />
           </div>

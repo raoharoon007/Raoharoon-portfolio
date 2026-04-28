@@ -29,6 +29,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured, del
         <img
           src={project.image}
           alt={project.title}
+          width={800}
+          height={450}
+          loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
         />
@@ -70,9 +74,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured, del
           {project.links.github && (
             <a
               href={project.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} source on GitHub`}
               className="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5" aria-hidden="true" />
             </a>
           )}
         </div>

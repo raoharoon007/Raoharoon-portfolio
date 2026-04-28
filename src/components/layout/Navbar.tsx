@@ -65,11 +65,11 @@ export const Navbar = () => {
           ))}
           <div className="h-4 w-px bg-outline-variant/30" />
           <div className="flex items-center gap-4">
-            <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors">
-              <Github className="w-5 h-5" />
+            <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-on-surface-variant hover:text-primary transition-colors">
+              <Github className="w-5 h-5" aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors">
-              <Linkedin className="w-5 h-5" />
+            <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-on-surface-variant hover:text-primary transition-colors">
+              <Linkedin className="w-5 h-5" aria-hidden="true" />
             </a>
           </div>
           <a href="/cv.pdf" download>
@@ -81,10 +81,13 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-on-background"
+          className="md:hidden text-on-background p-2 rounded-lg hover:bg-white/5 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
       </div>
 
@@ -92,6 +95,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -110,11 +114,11 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="flex gap-6 py-4 border-t border-white/5">
-                <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-6 h-6 text-on-surface-variant" />
+                <a href="https://github.com/raoharoon007" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="p-2 -m-2 hover:text-primary transition-colors">
+                  <Github className="w-6 h-6 text-on-surface-variant" aria-hidden="true" />
                 </a>
-                <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-6 h-6 text-on-surface-variant" />
+                <a href="https://www.linkedin.com/in/rao-haroon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="p-2 -m-2 hover:text-primary transition-colors">
+                  <Linkedin className="w-6 h-6 text-on-surface-variant" aria-hidden="true" />
                 </a>
               </div>
               <a href="/cv.pdf" download className="w-full">

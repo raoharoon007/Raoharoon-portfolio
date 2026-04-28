@@ -15,16 +15,18 @@ html {
   --color-surface-container-low: #131b2e;
   --color-surface-container-highest: #2d3449;
   --color-surface-bright: #31394d;
-  --color-on-background: #dae2fd;
-  --color-on-surface: #dae2fd;
-  --color-on-surface-variant: #c7c4d7;
-  --color-primary: #bdc2ff;
-  --color-primary-container: #7c87f3;
+  /* Boosted for WCAG AA contrast on #0b1326 background */
+  --color-on-background: #e8eeff;
+  --color-on-surface: #e8eeff;
+  --color-on-surface-variant: #d4d1e8;
+  --color-primary: #c8cdff;
+  --color-primary-container: #8c97f8;
   --color-on-primary: #131e8c;
-  --color-secondary: #4edea3;
-  --color-secondary-container: #00a572;
-  --color-on-secondary-container: #00311f;
-  --color-outline-variant: #464554;
+  --color-secondary: #5eedb5;
+  --color-secondary-container: #00b87f;
+  --color-on-secondary-container: #003825;
+  --color-outline-variant: #565570;
+  --color-error: #ff8a80;
 }
 
 @layer base {
