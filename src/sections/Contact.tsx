@@ -66,7 +66,7 @@ export const Contact = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-white/5 transition-all"
+              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-all shadow-sm"
             >
               <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                 <Mail className="w-6 h-6" />
@@ -79,7 +79,7 @@ export const Contact = () => {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-white/5 transition-all"
+              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary/50 transition-all shadow-sm"
             >
               <div className="w-12 h-12 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                 <MessageSquare className="w-6 h-6" />
@@ -92,7 +92,7 @@ export const Contact = () => {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-white/5 transition-all sm:col-span-2 lg:col-span-1"
+              className="flex items-center gap-4 p-4 sm:p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-secondary/50 transition-all sm:col-span-2 lg:col-span-1 shadow-sm"
             >
               <div className="w-12 h-12 shrink-0 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
                 <Send className="w-6 h-6" />
@@ -114,7 +114,7 @@ export const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 onSubmit={handleSubmit(onSubmit)}
-                className="space-y-6 glass-panel p-6 sm:p-8 md:p-12 rounded-3xl border-white/10"
+                className="space-y-6 glass-panel p-6 sm:p-8 md:p-12 rounded-3xl"
               >
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -125,7 +125,7 @@ export const Contact = () => {
                       type="text"
                       autoComplete="name"
                       aria-describedby={errors.name ? 'contact-name-error' : undefined}
-                      className={`w-full bg-surface-container-highest/50 border ${errors.name ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
+                      className={`w-full bg-surface-container-highest/30 border ${errors.name ? 'border-error' : 'border-outline-variant/20'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
                       placeholder="John Doe"
                     />
                     {errors.name && <p id="contact-name-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.name.message}</p>}
@@ -138,7 +138,7 @@ export const Contact = () => {
                       type="email"
                       autoComplete="email"
                       aria-describedby={errors.email ? 'contact-email-error' : undefined}
-                      className={`w-full bg-surface-container-highest/50 border ${errors.email ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
+                      className={`w-full bg-surface-container-highest/30 border ${errors.email ? 'border-error' : 'border-outline-variant/20'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors text-sm`}
                       placeholder="john@example.com"
                     />
                     {errors.email && <p id="contact-email-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.email.message}</p>}
@@ -151,7 +151,7 @@ export const Contact = () => {
                     id="contact-message"
                     rows={4}
                     aria-describedby={errors.message ? 'contact-message-error' : undefined}
-                    className={`w-full bg-surface-container-highest/50 border ${errors.message ? 'border-error' : 'border-white/10'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors resize-none text-sm`}
+                    className={`w-full bg-surface-container-highest/30 border ${errors.message ? 'border-error' : 'border-outline-variant/20'} rounded-xl px-5 py-4 focus:outline-none focus:border-primary transition-colors resize-none text-sm`}
                     placeholder="Tell me about your project..."
                   />
                   {errors.message && <p id="contact-message-error" role="alert" className="text-[10px] text-error font-bold uppercase">{errors.message.message}</p>}
@@ -175,7 +175,7 @@ export const Contact = () => {
                 key="success"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-panel p-12 rounded-3xl border-white/10 text-center space-y-6 flex flex-col items-center justify-center min-h-[400px]"
+                className="glass-panel p-12 rounded-3xl text-center space-y-6 flex flex-col items-center justify-center min-h-[400px]"
               >
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                   <Send className="w-8 h-8" />

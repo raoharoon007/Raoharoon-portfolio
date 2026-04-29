@@ -10,12 +10,12 @@ html {
   --font-body: "Manrope", sans-serif;
   --font-label: "Space Grotesk", sans-serif;
 
+  /* Theme variables default to DARK mode */
   --color-background: #0b1326;
   --color-surface: #0b1326;
   --color-surface-container-low: #131b2e;
   --color-surface-container-highest: #2d3449;
   --color-surface-bright: #31394d;
-  /* Boosted for WCAG AA contrast on #0b1326 background */
   --color-on-background: #e8eeff;
   --color-on-surface: #e8eeff;
   --color-on-surface-variant: #d4d1e8;
@@ -29,9 +29,28 @@ html {
   --color-error: #ff8a80;
 }
 
+:root[data-theme='light'] {
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-container-low: #f5f5f5;
+  --color-surface-container-highest: #e0e0e0;
+  --color-surface-bright: #ffffff;
+  --color-on-background: #1a1a2e;
+  --color-on-surface: #1a1a2e;
+  --color-on-surface-variant: #4a4a68;
+  --color-primary: #3b4cdd;
+  --color-primary-container: #e8eaff;
+  --color-on-primary: #ffffff;
+  --color-secondary: #00875a;
+  --color-secondary-container: #caffea;
+  --color-on-secondary-container: #002114;
+  --color-outline-variant: #c4c4d4;
+  --color-error: #ba1a1a;
+}
+
 @layer base {
   body {
-    @apply bg-background text-on-background font-body selection:bg-secondary/30;
+    @apply bg-background text-on-background font-body selection:bg-secondary/30 transition-colors duration-500;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -44,11 +63,16 @@ html {
 }
 
 .glass-panel {
-  @apply bg-surface-container-highest/40 backdrop-blur-xl border border-white/5;
+  @apply bg-surface-container-highest/40 backdrop-blur-xl border border-white/5 shadow-lg transition-all duration-300;
+}
+
+:root[data-theme='light'] .glass-panel {
+  @apply border-outline-variant/20;
 }
 
 .hero-gradient {
-  background: radial-gradient(circle at top right, rgba(189, 194, 255, 0.1), transparent);
+  background: radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary), transparent 92%), transparent 50%),
+              radial-gradient(circle at bottom left, color-mix(in srgb, var(--color-secondary), transparent 92%), transparent 50%);
 }
 
 #scroll-progress {
@@ -60,4 +84,20 @@ html {
   background: var(--color-secondary);
   transform-origin: 0%;
   z-index: 100;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
 }

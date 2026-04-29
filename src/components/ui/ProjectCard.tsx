@@ -18,7 +18,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured, del
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        'group relative bg-surface-container-highest rounded-xl overflow-hidden transition-all duration-500',
+        'group relative bg-surface-container-highest rounded-xl overflow-hidden transition-all duration-500 border border-outline-variant/10 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1',
         featured ? 'md:col-span-12 lg:flex' : 'md:col-span-6'
       )}
     >
@@ -36,11 +36,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured, del
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-surface-container-low/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-surface-container-low/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       <div className={cn(
-        'p-8 flex flex-col justify-center',
+        'p-8 flex flex-col justify-center bg-surface-container-highest',
         featured ? 'lg:w-2/5' : 'w-full'
       )}>
         <div className="flex flex-wrap gap-2 mb-4">

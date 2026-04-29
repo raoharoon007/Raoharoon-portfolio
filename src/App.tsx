@@ -14,6 +14,7 @@ import { Experience } from './sections/Experience';
 import { Contact } from './sections/Contact';
 import { ArrowUp } from 'lucide-react';
 import React from 'react';
+import { Preloader } from './components/ui/Preloader';
 
 export default function App() {
   const { scrollYProgress, scrollY } = useScroll();
@@ -33,6 +34,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background selection:bg-primary/30">
+      <Preloader />
       <motion.div id="scroll-progress" style={{ scaleX }} />
       <Navbar />
       <main>

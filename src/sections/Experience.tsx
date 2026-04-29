@@ -35,7 +35,7 @@ export const Experience = () => {
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.skills.map(skill => (
-                    <span key={skill} className="px-3 py-1 bg-surface-bright/50 text-[10px] font-bold tracking-widest uppercase rounded-full border border-white/5">
+                    <span key={skill} className="px-3 py-1 bg-surface-bright/50 text-[10px] font-bold tracking-widest uppercase rounded-full border border-outline-variant/10">
                       {skill}
                     </span>
                   ))}

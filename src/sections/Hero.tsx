@@ -6,8 +6,8 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden hero-gradient">
       {/* Background Elements */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full" />
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full animate-float" />
+      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary/20 blur-[120px] rounded-full animate-float-delayed" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         <div className="max-w-4xl space-y-8">
@@ -15,7 +15,7 @@ export const Hero = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-white/10"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
