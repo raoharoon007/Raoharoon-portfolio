@@ -53,9 +53,11 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             aria-label="Back to top"
-            className="fixed bottom-8 right-8 z-40 p-4 bg-primary text-on-primary rounded-full shadow-lg hover:bg-primary-container transition-colors"
+            className="fixed bottom-8 right-8 z-40 p-4 bg-primary text-on-primary rounded-full shadow-lg hover:bg-primary-container hover:text-primary transition-all duration-300 shadow-primary/20 hover:shadow-primary/40"
           >
             <ArrowUp className="w-6 h-6" aria-hidden="true" />
           </motion.button>
